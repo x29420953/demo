@@ -2,7 +2,6 @@ from django import http
 from rest_framework.views import APIView
 import datetime
 
-from todolist.models import ToDo
 
 # Create your views here.
 

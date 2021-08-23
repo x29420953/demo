@@ -78,12 +78,7 @@ WSGI_APPLICATION = 'django_todolist.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'todo',
-        'USER': 'root',
-        'PASSWORD': '88888888',
-        'HOST': '127.0.0.1',
-        'PORT': '3307'
+        
     }
 }
 
