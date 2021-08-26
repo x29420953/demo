@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js'></script>
+    <title>Document</title>
+</head>
+<script>
+    var dataUrl = "http://127.0.0.1:8000/todolistajax/"
+    axios.get(dataUrl)
+        .then((res) => {
+            console.log(res.data);
+            arr = res.data['objects'];
+            console.log(arr.length);
+            
+            var box = document.getElementById('ajaxlist');
+            for (var i=0; i< arr.length; i++){
+                console.log(arr[i]);
+                box.innerHTML += '<li>' + arr[i]['content'] + '</li>';
+            }
+        })
+        .catch((err) => {
+            console.log(err);
+        }
+    );
+
+
+</script>
+<body>
+    <h1>ToDoList</h1>
+    {% for list in temp %}
+    <div class="list">
+        <a href="{% url 'todolist_get' id=list.id %}">{{ list.content }}</a>
+    </div>
+    {% endfor %}
+
+    <h1>AjaxList</h1>
+    <ul id="ajaxlist">
+    </ul>
+</body>
+</html>
