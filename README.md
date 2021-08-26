@@ -21,3 +21,11 @@ http://localhost:8080/
 
 npm run serve
 http://localhost:8080/
+
+-------------------------------------
+
+## django_todolist_html
+
+
+python manage.py runserver
+http://127.0.0.1:8000/todolist/ 
